@@ -1,0 +1,17 @@
+<h1>{{> page/title}}</h1>
+
+{{> page/nav}}
+
+ <h1>Liste des utilisateurs</h1>
+ <form action="/utilisateurs" method="post">
+    <label for="nom">Nom</label>
+    <input type="text" name="nom" id="name">
+    <label for="nom">Prenom</label>
+    <input type="text" name="prenom" id="prenom">
+    <button type="submit">Sauvegarder</button>
+ </form>
+    <ul>
+        {{#each users}}
+            <li>{{prenom}} - {{nom}} <a href="/user/{{id}}" type="button">X</a></li>
+        {{/each}}
+    </ul>
